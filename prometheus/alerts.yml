@@ -1,0 +1,12 @@
+
+groups:
+  - name: f1-alerts
+    rules:
+      - alert: EngineTooHot
+        expr: avg_over_time(driver_engine_temp_celsius[30s]) > 115
+        for: 20s
+        labels:
+          severity: warning
+        annotations:
+          summary: "Engine temperature high"
+          description: "Average engine temp >115°C for 20s"
