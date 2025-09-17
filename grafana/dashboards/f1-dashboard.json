@@ -1,0 +1,103 @@
+{
+  "title": "F1 Telemetry \u2013 Live",
+  "time": {
+    "from": "now-15m",
+    "to": "now"
+  },
+  "panels": [
+    {
+      "type": "timeseries",
+      "title": "Speed (kph) \u2013 Top 5",
+      "targets": [
+        {
+          "expr": "driver_speed_kph{driver=~\"D(01|02|03|04|05)\"}",
+          "legendFormat": "{{driver}}"
+        }
+      ],
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "type": "gauge",
+      "title": "Engine Temp (\u00b0C) \u2013 D01",
+      "targets": [
+        {
+          "expr": "driver_engine_temp_celsius{driver=\"D01\"}"
+        }
+      ],
+      "gridPos": {
+        "h": 6,
+        "w": 6,
+        "x": 0,
+        "y": 8
+      }
+    },
+    {
+      "type": "gauge",
+      "title": "Engine Temp (\u00b0C) \u2013 D02",
+      "targets": [
+        {
+          "expr": "driver_engine_temp_celsius{driver=\"D02\"}"
+        }
+      ],
+      "gridPos": {
+        "h": 6,
+        "w": 6,
+        "x": 6,
+        "y": 8
+      }
+    },
+    {
+      "type": "gauge",
+      "title": "Engine Temp (\u00b0C) \u2013 D03",
+      "targets": [
+        {
+          "expr": "driver_engine_temp_celsius{driver=\"D03\"}"
+        }
+      ],
+      "gridPos": {
+        "h": 6,
+        "w": 6,
+        "x": 12,
+        "y": 8
+      }
+    },
+    {
+      "type": "gauge",
+      "title": "Engine Temp (\u00b0C) \u2013 D04",
+      "targets": [
+        {
+          "expr": "driver_engine_temp_celsius{driver=\"D04\"}"
+        }
+      ],
+      "gridPos": {
+        "h": 6,
+        "w": 6,
+        "x": 18,
+        "y": 8
+      }
+    },
+    {
+      "type": "table",
+      "title": "Last Lap Time (ms) \u2013 All",
+      "targets": [
+        {
+          "expr": "driver_last_lap_ms",
+          "legendFormat": "{{driver}}"
+        }
+      ],
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 14
+      }
+    }
+  ],
+  "schemaVersion": 38,
+  "version": 1
+}
