@@ -48,7 +48,7 @@ services:
 
   telemetry-sim:
     build: ./telemetry-sim
-    image: ghcr.io/your-org/telemetry-sim:latest
+    image: ghcr.io/vemavamsi/telemetry-sim:latest
     environment:
       - DRIVERS=20
       - UPDATE_INTERVAL=0.5
